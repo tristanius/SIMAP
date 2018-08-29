@@ -1,0 +1,180 @@
+/* ------------ Generales ------------ */
+.no-display{
+	display: none;
+}
+.inline{
+	display: inline;
+}
+
+/* ------------ Estilo de las tablas ------------ */
+table, table tr td, table tr th{
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+table.table tbody tr:hover{
+	background: #E2F4FF;
+}
+table.table tbody tr td:hover{
+	background: #D1EBF9;
+}
+.font9, .font9 *, .font9 input{
+	font-size: 9px;
+}
+.font10, .font10 *, .font10 input{
+	font-size: 10px;
+}
+.font11, .font11 *, .font11 input{
+	font-size: 11px;
+}
+.font12, .font12 *, .font12 input{
+	font-size: 12px;
+}
+
+/* ------------- Inpust y Selects ------------- */
+[type="color"], [type="date"], [type="datetime-local"], 
+[type="datetime"], [type="email"], [type="month"], 
+[type="number"], [type="password"], [type="search"], 
+[type="tel"], [type="text"], [type="time"], [type="url"], 
+[type="week"], textarea, select{
+	margin-bottom: 2px;
+	height: 2rem;
+	padding: 4px;
+}
+select{
+ 	-webkit-appearance: menulist;
+ 	-moz-appearance: menulist;
+ 	appearance: menulist;
+}
+
+/* ------------ Botones --------------- */
+
+button.button, a.button{
+	margin-bottom: 2px;
+}
+
+/* inputs y select delgados */
+table input.filter{
+	max-width: 16ex;
+	padding: 2px
+}
+select.thin-select, input.thin-input{
+	height: 1.5rem;
+	padding: 0;
+	margin: 0;
+	margin: 2px;
+	font-size: 12px;
+	width: auto;
+}
+
+input.thin-input[type="number"]{
+	padding-right: 24px;
+}
+input.no-visible, textarea.no-visible{
+	border:none;
+	box-shadow: none;
+}
+
+/*  --------------- Colores adicionales Botones, y Cajas ------------*/
+.bg-gray-blue{
+	background: #4491DD;
+	color: #FFF;
+}
+.text-gray-blue{
+	color: #4491DD;
+}
+.btn-gray-blue{
+	background: #FFF;
+	border: 1px solid #4491DD;
+	color: #4491DD;
+}
+
+.bg-light-orange{
+	background: #FCC614;
+}
+.text-light-orange{
+	color: #FCC614;
+}
+.btn-light-orange{
+	background: #FFF;
+	border: 1px solid #FCC614;
+	color: #FCC614;
+}
+
+.bg-orange{
+	background: #E87F1E;
+	color: #FFF;
+}
+.text-orange{
+	color: #E87F1E;
+}
+.btn-orange{
+	background: #FFF;
+	border: 1px solid #E87F1E;
+	color: #E87F1E;
+}
+
+.bg-green{
+	background: #3EAF36;
+	color: #FFF;
+}
+.text-green{
+	color: #3EAF36;
+}
+.btn-green{
+	background: #FFF;
+	border: 1px solid #3EAF36;
+	color: #3EAF36;
+}
+
+.bg-white{
+	background: #FFF;
+}
+.text-white{
+	color: #FFF;
+}
+
+/* ------------- ventana modal ----------- */
+
+.vmodal{
+	background-color:  rgba(100, 100, 100, 0.7);
+	position: fixed;
+	width: 100%;
+	min-height: 50ex;
+	height: 100%;
+	top:0;
+	bottom: 0;
+	right: 0;
+	left:0;
+	z-index: 100;
+	/*display: flex;
+	align-items: center;*/
+}
+.vmodal .vmodal-content{
+	display: block;
+	background: #FFF;
+	padding: 2ex;
+	margin: auto;
+	position: relative;
+	max-width: 92%;
+	top: 5%;
+	min-height: 50ex;
+	max-height: 90%;
+	height: auto;	
+	overflow: auto;
+}
+.vmodal .vmodal-content.full{
+	max-width: 98%;
+}
+
+
+/* ------------ Tabs ----------*/
+ul.tabs{
+	border:none;
+	border-bottom:  1px solid #ddd;
+}
+.tabs-title>a{
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	padding: 1ex;
+}
