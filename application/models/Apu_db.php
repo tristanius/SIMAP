@@ -208,7 +208,7 @@ class Apu_db extends CI_Model {
 	{
 		$data = array();
 		$data['apu_idapu'] = $idapu;
-		$data['equipo_idequipo'] = $item->idequipo;
+		$data['equipo_idequipo'] = isset($item->equipo_idequipo)?$item->equipo_idequipo:$item->idequipo;
 		$data['cantidad'] = $item->cantidad;
 		$data['rendimiento'] = $item->rendimiento;
 		$data['subtotal'] = isset($item->subtotal)?$item->subtotal:0;
@@ -219,7 +219,7 @@ class Apu_db extends CI_Model {
 	{
 		$data = array();
 		$data['apu_idapu'] = $item->idapu;
-		$data['equipo_idequipo'] = $item->equipo_idequipo;
+		$data['equipo_idequipo'] = isset($item->equipo_idequipo)?$item->equipo_idequipo:$item->idequipo;
 		$data['cantidad'] = $item->cantidad;
 		$data['rendimiento'] = $item->rendimiento;
 		$data['subtotal'] = isset($item->subtotal)?$item->subtotal:0;

@@ -51,7 +51,7 @@ class Version extends CI_Controller {
 			$this->save_recursos($apu->personal, $apu->idapu, $idversion, 'personal');
 
 			$apu->equipos = $this->apu->getEquiposBy( array('apu.idapu'=>$id) )->result();
-			$this->save_recursos($apu->materiales, $apu->idapu, $idversion, 'equipos');
+			$this->save_recursos($apu->equipos, $apu->idapu, $idversion, 'equipos');
 		}
 		return $apu;
 	}

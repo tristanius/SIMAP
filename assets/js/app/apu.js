@@ -182,7 +182,6 @@ app.controller("gestion_apu",function($scope, $http, $timeout){
 			{ idproyecto: $scope.proyecto.idproyecto, idversion: $scope.proyecto.idversion }, 
 			function(resp){
 				if(resp.data.status){
-					console.log(resp.data.sql);
 					$timeout(function(){
 						$scope.proyecto.subtotales = resp.data.subtotales;
 						$scope.proyecto.subtotales_grupo = resp.data.subtotales_grupo;

@@ -13,7 +13,7 @@
 		<tr>
 			<th colspan="10"></th>
 			<th>Subotal</th>
-			<th class="bg-light-orange"><span ng-bind="proyecto.total_directo | currency: '$ ': 2 "></span></th>
+			<th class="bg-light-orange"><span ng-bind="proyecto.subtotales[0].total_directo | currency: '$ ': 2 "></span></th>
 			<th colspan="2"></th>
 		</tr>
 		<tr class="bg-gray-blue text-white">
@@ -27,21 +27,21 @@
 			<th>Composición</th>			
 			<th>Cantidad</th>
 			<th>Vr.</th>
-			<th>Valor Unitario</th>
-			<th>Total_Item</th>
+			<th style="min-width:20ex;">Valor Unitario</th>
+			<th style="min-width:20ex;">Total_Item</th>
 			<th>Mod.</th>
 			<th>APU</th>
 		</tr>		
 		<tr>
 			<td> </td>
 			<td> 
-				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.item">
+				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.item" style="width:5ex;">
 			</td>
 			<td> 
 				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.descripcion">
 			</td>
 			<td> 
-				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.unidad">
+				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.unidad" style="width:5ex;">
 			</td>
 			<td> 
 				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.grupo">
@@ -53,7 +53,7 @@
 				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.clasificacion">
 			</td>
 			<td> 
-				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.composicion">
+				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos" ng-model="filterItems.composicion"  style="width:7ex;">
 			</td>
 			<td> 
 				<input type="text" class="thin-input filter no-visible" placeholder="filtro de datos">
@@ -77,8 +77,8 @@
 			<td ng-bind="item.composicion"></td>
 			<td ng-bind="item.cantidad" ></td>
 			<td ng-bind="item.no_version"></td>
-			<td ng-bind="item.valor_und | currency: '$ '" ng-init="item.valor_und = item.valor_und?item.valor_und:0"></td>
-			<td ng-bind="item.total_directo | currency: '$ '"></td>
+			<td class="text-right" ng-bind="item.valor_und | currency: '$ '" ng-init="item.valor_und = item.valor_und?item.valor_und:0"></td>
+			<td class="text-right" ng-bind="item.total_directo | currency: '$ '"></td>
 			<td> <button class="button hollow tiny warning" ng-click="modItem('#form_item', item);"> <i class="fas fa-pencil-alt" ></i> </button> </td>
 			<td> <button class="button hollow tiny primary" ng-click="form_apu( '<?= site_url('apu/get/') ?>/'+item.idapu, '#form_apu' );" > APU </button> </td>
 		</tr>
