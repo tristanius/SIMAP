@@ -25,14 +25,14 @@
 					<tr class="bg-gray-blue text-white">
 						<th></th>
 						<th> <input type="text" class="thin-input" style="width: 8ex;" ng-model="FilterProyectMat.codigo"> </th>
-						<th> <input type="text" class="thin-input" ng-model="FilterProyectMat.descripcion_equipo"> </th>
+						<th> <input type="text" class="thin-input" ng-model="FilterProyectMat.descripcion_material"> </th>
 						<th> <input type="text" class="thin-input" style="width: 8ex;" ng-model="FilterProyectMat.unidad"> </th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="m in materiales | filter: FilterProyectMat track by $index" ng-class="(!m.costo_unidad || m.costo_unidad == 0)?'bg-light-red':''">						
-						<td> <input type="checkbox" ng-model="m.seleccion" ng-init="m.seleccion = false;"> </td>
+						<td> <input type="checkbox" ng-model="m.seleccion" ng-init="m.seleccion = false;" ng-init="m.seleccion = false"> </td>
 						<td ng-bind="m.codigo"></td>
 						<td ng-bind="m.descripcion_material"></td>
 						<td ng-bind="m.unidad"></td>

@@ -236,10 +236,10 @@ app.controller("gestion_apu",function($scope, $http, $timeout){
 		}
 		angular.forEach(lista, function(v, k){
 			if(v.seleccion == true){
-				var f = v;
+				var f = angular.copy(v);
 				$scope.myapu[propiedad].push(f);
-				v.seleccion = false;
 			}
+			v.seleccion = false;
 		});
 		$scope.vmodal(tag, 'close');
 	}
