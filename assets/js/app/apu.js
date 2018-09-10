@@ -237,6 +237,7 @@ app.controller("gestion_apu",function($scope, $http, $timeout){
 		angular.forEach(lista, function(v, k){
 			if(v.seleccion == true){
 				var f = angular.copy(v);
+				f.indice = Math.random();
 				$scope.myapu[propiedad].push(f);
 			}
 			v.seleccion = false;
