@@ -179,7 +179,7 @@ class Apu extends CI_Controller {
 				case 'personal':
 					if(isset($post->recurso->idapu_has_personal)){
 						$this->apu_db->start();
-						$this->apu_db->delPersonal($post->recurso->idapu_has_personal);
+						$this->apu_db->delPersona($post->recurso->idapu_has_personal);
 						$ret->status = ($this->apu_db->end() === FALSE)?FALSE:TRUE;
 					}else{
 						$ret->status = TRUE;

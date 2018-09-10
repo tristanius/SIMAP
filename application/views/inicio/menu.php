@@ -21,18 +21,18 @@
        <a href="#">Personal</a>
 
        <ul class="menu vertical nested">
-        	<li><a href="<?= site_url('personal/importar') ?>">Importar cargos personal</a></li>
+        	<li><a href="<?= site_url('personal/importar') ?>">Maestros cargos personal</a></li>
         </ul>
     </li>
     <li>
         <a href="#">Equipos</a>
         <ul class="menu vertical nested">
-            <li><a href="<?= site_url('equipo/importar') ?>">Importar items equipos</a></li>
+            <li><a href="<?= site_url('equipo/importar') ?>">Maestro de equipo</a></li>
         </ul>
     </li>
     <li><a href="#">Material</a>
         <ul class="menu vertical nested">
-            <li><a href="<?= site_url('material/importar') ?>">Importar items material</a></li>        
+            <li><a href="<?= site_url('material/importar') ?>">Maestro de material</a></li>        
         </ul>
     </li>
 
