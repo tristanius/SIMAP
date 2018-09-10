@@ -10,7 +10,7 @@
 				<tr class="bg-gray-blue text-white">
 					<th></th>
 					<th>Codigo</th>
-					<th>Descripción</th>
+					<th>Cargo</th>
 					<th>Unidad</th>
 					<th>Cantidad</th>
 					<th>Rendimiento</th>
@@ -21,9 +21,23 @@
 					<th class="bg-green">Rend.</th>
 					<th class="bg-green">subtotal</th>
 				</tr>
+				<tr>
+					<th></th>
+					<th> <input type="text" class="thin-input" ng-model="filterPerAPU.codigo" style="width: 8ex;"> </th>
+					<th> <input type="text" class="thin-input" ng-model="filterPerAPU.cargo" style="width: 8ex;"> </th>
+					<th> <input type="text" class="thin-input" ng-model="filterPerAPU.unidad" style="width: 8ex;"> </th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th class="bg-orange"></th>
+					<th class="bg-green"></th>
+					<th class="bg-green"></th>
+					<th class="bg-green"></th>
+				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="p in myapu.personal track by $index">
+				<tr ng-repeat="p in myapu.personal | filter: filterPerAPU track by $index">
 					<td ng-bind="$index+1"></td>
 					<td ng-bind="p.codigo"></td>
 					<td ng-bind="p.cargo"></td>

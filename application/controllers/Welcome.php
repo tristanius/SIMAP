@@ -20,6 +20,18 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view("inicio/principal");
+		if ( $this->sesion_iniciada() ) {
+			$this->load->view("inicio/principal");
+		}
+	}
+
+	private function sesion_iniciada()
+	{
+		$this->load->library('session');
+    	$isess = $this->session->userdata("isess");
+		if($isess){
+			return TRUE;
+		}
+		return FALSE;
 	}
 }

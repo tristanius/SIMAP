@@ -53,7 +53,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="eq in listado_equipos | filter: filterItemsEquipos">
+				<tr ng-repeat="eq in listado_equipos | filter: filterItemsEquipos" ng-class="(!eq.costo_unidad || eq.costo_unidad == 0)?'bg-light-red':''">
 					<td ng-bind="eq.idequipo"></td>
 					<td ng-bind="eq.nombre_proyecto"></td>
 					<td ng-bind="eq.codigo"></td>

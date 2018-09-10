@@ -1,5 +1,5 @@
 <section id="form_apu" class="vmodal no-display" ng-init="init_modal('#form_apu')">
-	<div class="vmodal-content">
+	<div class="vmodal-content scroll">
 		<h4> <img src="<?= base_url('assets/img/termotecnica.png') ?>" width="100"> Analisis de precios unitario (APU)</h4>
 		  
 		<button class="close-button" ng-click="vmodal('#form_apu', 'close');" type="button">

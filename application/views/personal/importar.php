@@ -58,7 +58,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="per in listado_personal | filter: filterCargosPer">
+				<tr ng-repeat="per in listado_personal | filter: filterCargosPer" ng-class="(!per.costo_unidad || per.costo_unidad == 0)?'bg-light-red':''">
 					<td ng-bind="per.idpersonal"></td>
 					<td ng-bind="per.nombre_proyecto"></td>
 					<td ng-bind="per.codigo"></td>

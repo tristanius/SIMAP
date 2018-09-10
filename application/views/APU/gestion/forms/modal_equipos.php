@@ -1,7 +1,14 @@
 <section id="modal_equipos" class="vmodal no-display" ng-init="init_modal('#modal_equipos')">
 	<div class="vmodal-content">
-		<div class="padding1ex">
-			<h5>Equipos:</h5>
+		<div class="vmodal-header">
+			<h5>
+				Equipos:
+				<button class="hollow button primary" ng-click="addRecursos('equipos', equipos, '#modal_equipos' );"> <i class="fas fa-save"></i> Agregar </button>
+				<button class="hollow button alert" ng-click="vmodal('#modal_equipos', 'close');"> Salir </button>
+			</h5>
+		</div>
+
+		<div class="padding1ex vmodal-body">
 			<hr>
 			<h6>Selecciona un conjunto de elementos para agregar al APU</h6>
 
@@ -14,9 +21,16 @@
 						<th>Unidad</th>
 						<th>Costo Und.</th>
 					</tr>
+					<tr class="bg-gray-blue text-white">
+						<th></th>
+						<th> <input type="text" style="width: 8ex;" class="thin-input" ng-model="FilterProyectEq.codigo"> </th>
+						<th> <input type="text" style="width: 8ex;" class="thin-input" ng-model="FilterProyectEq.descripcion_equipo"> </th>
+						<th> <input type="text" style="width: 8ex;" class="thin-input" ng-model="FilterProyectEq.unidad"> </th>
+						<th></th>
+					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="e in equipos track by $index">						
+					<tr ng-repeat="e in equipos track by $index"  ng-class="(!e.costo_unidad || e.costo_unidad == 0)?'bg-light-red':''">						
 						<td> <input type="checkbox" ng-model="e.seleccion" ng-init="e.seleccion = false;"> </td>
 						<td ng-bind="e.codigo"></td>
 						<td ng-bind="e.descripcion_equipo"></td>
@@ -29,10 +43,6 @@
 				</tbody>
 			</table>
 			<p></p>
-
-			<div>
-				<button class="hollow button primary" ng-click="addRecursos('equipos', equipos, '#modal_equipos' );"> <i class="fas fa-save"></i> Agregar </button>
-			</div>
 		</div>	
 	</div>
 </section>

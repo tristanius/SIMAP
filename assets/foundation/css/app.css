@@ -133,6 +133,20 @@ input.no-visible, textarea.no-visible{
 	color: #FFF;
 }
 
+
+.bg-light-red{
+	background: #ffafaf;
+}
+.text-light-red{
+	color: #ffafaf;
+}
+.btn-light-red{
+	background: #FFF;
+	border: 1px solid #ffafaf;
+	color: #ffafaf;
+}
+
+
 /* ------------- ventana modal ----------- */
 
 .vmodal{
@@ -156,14 +170,28 @@ input.no-visible, textarea.no-visible{
 	margin: auto;
 	position: relative;
 	max-width: 92%;
-	top: 5%;
+	top: 2%;
 	min-height: 50ex;
-	max-height: 90%;
-	height: auto;	
+	height: 95%;
+}
+.vmodal .vmodal-content.scroll{
 	overflow: auto;
 }
+
 .vmodal .vmodal-content.full{
 	max-width: 98%;
+}
+
+.vmodal .vmodal-content .vmodal-header{
+	position: relative;
+	background: #FFF;
+}
+
+.vmodal .vmodal-content .vmodal-body{
+	position: relative;
+	height: 80%;
+	background: #FFF;
+	overflow: auto;
 }
 
 

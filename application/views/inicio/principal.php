@@ -22,7 +22,7 @@
       	if(isset($html)){
       		echo $html;
       	}else{
-      		echo  "<img src='".base_url('assets/img/ot.png')."' />";
+      		$this->load->view('inicio/inicio');
       	}
 
       	?>

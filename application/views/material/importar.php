@@ -53,7 +53,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="mat in listado_material | filter: filterItemsMaterial">
+				<tr ng-repeat="mat in listado_material | filter: filterItemsMaterial" ng-class="(!mat.costo_unidad || mat.costo_unidad == 0)?'bg-light-red':''">
 					<td ng-bind="mat.idmaterial"></td>
 					<td ng-bind="mat.nombre_proyecto"></td>
 					<td ng-bind="mat.codigo"></td>

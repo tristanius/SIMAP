@@ -89,20 +89,25 @@ class Personal extends CI_Controller {
 	{
 		$q = $this->per->getBy( array('codigo'=>$row[0], 'proyecto_idproyecto'=>$idproyecto ) );
 		if($q->num_rows() <= 0){
-			$per = new stdClass();
-			$per->codigo = $row[0];
-			$per->cargo = $row[1];
-			$per->nivel_salarial = $row[2];
-			$per->tipo_cargo = $row[3];
-			$per->unidad = $row[4];
-			$per->costo_unidad = $row[5];
-			$per->proyecto_idproyecto = $idproyecto;
-			if( is_numeric( $this->per->addCargo($per) ) ){
-				$row['resultado'] = 'Agregado';
+			if ( isset($row[1]) ) {
+				$per = new stdClass();
+				$per->codigo = $row[0];
+				$per->cargo = $row[1];
+				$per->nivel_salarial = $row[2];
+				$per->tipo_cargo = $row[3];
+				$per->unidad = $row[4];
+				$per->costo_unidad = $row[5];
+				$per->proyecto_idproyecto = $idproyecto;
+				if( is_numeric( $this->per->addCargo($per) ) ){
+					$row['resultado'] = 'Agregado';
+					array_push($resultados, $row);
+				}
+			} else {
+				$row['resultado'] = 'Cargo no valido.';
 				array_push($resultados, $row);
 			}
 		}else{
-			$row['resultado'] = 'Codigo repetido en el proyecto';
+			$row['resultado'] = 'Codigo repetido en el proyecto.';
 			array_push($resultados, $row);
 		}
 		return $resultados;

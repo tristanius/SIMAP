@@ -21,9 +21,23 @@
 					<th class="bg-green">Rend.</th>
 					<th class="bg-green">subtotal</th>
 				</tr>
+				<tr>
+					<th></th>
+					<th> <input type="text" class="thin-input" ng-model="filterEqAPU.codigo" style="width: 8ex;"> </th>
+					<th> <input type="text" class="thin-input" ng-model="filterEqAPU.descripcion_equipo" style="width: 8ex;"> </th>
+					<th> <input type="text" class="thin-input" ng-model="filterEqAPU.unidad" style="width: 8ex;"> </th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th class="bg-orange"></th>
+					<th class="bg-green"></th>
+					<th class="bg-green"></th>
+					<th class="bg-green"></th>
+				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="e in myapu.equipos  track by $index">
+				<tr ng-repeat="e in myapu.equipos | filter: filterEqAPU track by $index">
 					<td ng-bind="$index+1"></td>
 					<td ng-bind="e.codigo"></td>
 					<td ng-bind="e.descripcion_equipo"></td>

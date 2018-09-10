@@ -21,9 +21,23 @@
 					<th class="bg-green">Rend.</th>
 					<th class="bg-green">subtotal</th>
 				</tr>
+				<tr>
+					<th></th>
+					<th> <input type="text" class="thin-input" ng-model="filterMatAPU.codigo" style="width: 8ex;" > </th>
+					<th> <input type="text" class="thin-input" ng-model="filterMatAPU.descripcion_material" style="width: 8ex;" > </th>
+					<th> <input type="text" class="thin-input" ng-model="filterMatAPU.unidad" style="width: 8ex;" > </th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th class="bg-orange"></th>
+					<th class="bg-green"></th>
+					<th class="bg-green"></th>
+					<th class="bg-green"></th>
+				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="m in myapu.materiales track by $index">
+				<tr ng-repeat="m in myapu.materiales | filter: filterMatAPU track by $index">
 					<td ng-bind="$index+1"></td>
 					<td ng-bind="m.codigo"></td>
 					<td ng-bind="m.descripcion_material"></td>

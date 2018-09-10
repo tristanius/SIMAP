@@ -88,16 +88,22 @@ class Equipo extends CI_Controller {
 	{
 		$q = $this->eq->getBy( array('codigo'=>$row[0], 'proyecto_idproyecto'=>$idproyecto) );
 		if($q->num_rows() <= 0){
-			$equipo = new stdClass();
-			$equipo->codigo = $row[0];
-			$equipo->descripcion_equipo = $row[1];
-			$equipo->unidad = $row[2];
-			$equipo->costo_unidad = $row[3];
-			$equipo->proyecto_idproyecto = $idproyecto;
-			if( is_numeric( $this->eq->addItem($equipo) ) ){
-				$row['resultado'] = 'Agregado';
+			if ( isset($row[1]) ) {
+				$equipo = new stdClass();
+				$equipo->codigo = $row[0];
+				$equipo->descripcion_equipo = $row[1];
+				$equipo->unidad = $row[2];
+				$equipo->costo_unidad = $row[3];
+				$equipo->proyecto_idproyecto = $idproyecto;
+				if( is_numeric( $this->eq->addItem($equipo) ) ){
+					$row['resultado'] = 'Agregado';
+					array_push($resultados, $row);
+				}
+			} else {
+				$row['resultado'] = 'Descripcion no valida.';
 				array_push($resultados, $row);
 			}
+			
 		}else{
 			$row['resultado'] = 'Codigo repetido en el proyecto';
 			array_push($resultados, $row);

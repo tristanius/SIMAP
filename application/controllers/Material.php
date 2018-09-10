@@ -88,16 +88,21 @@ class Material extends CI_Controller {
 	{
 		$q = $this->mat->getBy( array('codigo'=>$row[0], 'proyecto_idproyecto'=>$idproyecto) );
 		if($q->num_rows() <= 0){
-			$material = new stdClass();
-			$material->codigo = $row[0];
-			$material->descripcion_material = $row[1];
-			$material->unidad = $row[2];
-			$material->costo_unidad = $row[3];
-			$material->proyecto_idproyecto = $idproyecto;
-			if( is_numeric( $this->mat->addItem($material) ) ){
-				$row['resultado'] = 'Agregado';
+			if ( isset($row[1]) ) {
+				$material = new stdClass();
+				$material->codigo = $row[0];
+				$material->descripcion_material = $row[1];
+				$material->unidad = $row[2];
+				$material->costo_unidad = $row[3];
+				$material->proyecto_idproyecto = $idproyecto;
+				if( is_numeric( $this->mat->addItem($material) ) ){
+					$row['resultado'] = 'Agregado';
+					array_push($resultados, $row);
+				}
+			}else{
+				$row['resultado'] = 'Descripción invalida.';
 				array_push($resultados, $row);
-			}
+			}			
 		}else{
 			$row['resultado'] = 'Codigo repetido en el proyecto';
 			array_push($resultados, $row);

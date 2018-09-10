@@ -22,30 +22,7 @@
 
 			<div class="input-group cell large-3">
 				<span class="input-group-label bg-gray-blue"> <b>Unidad :</b> </span>
-				<select class="input-group-field" style="margin: auto;" ng-model="formItem.unidad">
-					<option value="">Sin selección</option>
-					<option value="m3">m3</option>
-					<option value="m2">m2</option>
-					<option value="metro">Metro</option>
-					<option value="km">Km</option>
-					<option value="Ha">Hectarea (ha)</option>
-					<option value="hr">hr</option>
-					<option value="dia/m3">dia/m3</option>
-					<option value="día">día</option>
-					<option value="mes">mes</option>
-					<option value="UN">UN</option>
-					<option value="und">und</option>
-					<option value="ton">ton</option>
-					<option value="kg">Kg</option>
-					<option value="Lb">Lb</option>
-					<option value="turno">Turno</option>
-					<option value="gal">Gal</option>
-					<option value="Litro">Litro (L)</option>
-					<option value="LT">Litro (LT)</option>
-					<option value="rollo">Rollo</option>
-					<option value="kit">Kit</option>
-					<option value="cm">cm</option>
-				</select>
+				<input class="input-group-field" ng-model="formItem.unidad" type="text" placeholder="Ej: m3, und, global... etc" />
 			</div>
 
 			<div class="input-group cell large-3">
