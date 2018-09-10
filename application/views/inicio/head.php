@@ -1,4 +1,6 @@
 <head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="<?= base_url( 'favico.ico' ) ?>" />
 	<!-- <link rel="stylesheet" type="text/css" href="<?= base_url('assets/foundation/css/') ?>"> -->
 
 	<!-- DatePicker js -->
@@ -27,5 +29,5 @@
 	<script type="text/javascript" src="<?= base_url('assets/js/app/material.js?v='.rand()) ?>"></script> 
 	<script type="text/javascript" src="<?= base_url('assets/js/app/apu.js?v='.rand()) ?>"></script> 
 	
-	<title>SIMAP -  A.P.U. control</title>
+	<title>SIMAP -  A.P.U. y programacion proyectos</title>
 </head>

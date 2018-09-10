@@ -15,6 +15,14 @@
 		
 		<p>
 			<img src="<?= base_url('assets/img/ot.png') ?>" style="width:40ex">
+			<div>
+				<ul class="left-align browser-default">
+					<li>Usuario: <span><?= $this->session->userdata('nombre_usuario') ?></span> </li>
+					<li>Rol: <span><?= $this->session->userdata('nombre_rol') ?></span> </li>
+					<li>C.O. asociado: <span><?= $this->session->userdata('base') ?></span> </li>
+					<li>Estado: Activo</li>
+				</ul>
+			</div>
 		</p>
 	</div>
 
