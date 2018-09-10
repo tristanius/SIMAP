@@ -31,7 +31,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="m in materiales track by $index" ng-class="(!m.costo_unidad || m.costo_unidad == 0)?'bg-light-red':''">						
+					<tr ng-repeat="m in materiales | filter: FilterProyectMat track by $index" ng-class="(!m.costo_unidad || m.costo_unidad == 0)?'bg-light-red':''">						
 						<td> <input type="checkbox" ng-model="m.seleccion" ng-init="m.seleccion = false;"> </td>
 						<td ng-bind="m.codigo"></td>
 						<td ng-bind="m.descripcion_material"></td>

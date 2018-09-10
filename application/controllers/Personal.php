@@ -89,7 +89,7 @@ class Personal extends CI_Controller {
 	{
 		$q = $this->per->getBy( array('codigo'=>$row[0], 'proyecto_idproyecto'=>$idproyecto ) );
 		if($q->num_rows() <= 0){
-			if ( isset($row[1]) ) {
+			if ( isset($row[1]) && $row[1] != '' ) {
 				$per = new stdClass();
 				$per->codigo = $row[0];
 				$per->cargo = $row[1];

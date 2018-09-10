@@ -167,6 +167,8 @@ class Apu_db extends CI_Model {
 	}
 	public function delMaterial($id)
 	{
+		$this->load->database();
+		return $this->db->delete('apu_has_material', array('idapu_has_material' =>$id ) );
 	}
 
 	# personal
@@ -201,6 +203,8 @@ class Apu_db extends CI_Model {
 	}
 	public function delPersona($id)
 	{
+		$this->load->database();
+		return $this->db->delete('apu_has_personal', array('idapu_has_personal' =>$id ) );
 	}
 
 	# equipo
@@ -235,6 +239,8 @@ class Apu_db extends CI_Model {
 	}
 	public function delEquipo($id)
 	{
+		$this->load->database();
+		return $this->db->delete('apu_has_equipo', array('idapu_has_equipo' =>$id ) );
 	}
 
 	# DB proc

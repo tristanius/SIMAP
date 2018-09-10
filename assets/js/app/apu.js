@@ -244,6 +244,23 @@ app.controller("gestion_apu",function($scope, $http, $timeout){
 		$scope.vmodal(tag, 'close');
 	}
 
+	$scope.removeRecursoFrom = function(tipo_lista, element, lista){
+		console.log($scope.site_url+'/apu/remove_recurso/')
+		if( confirm('confirma que desea borrar el elemento seleccionado?') ){
+			angular.forEach(lista, function(v, k){
+				if(v == element){
+					$scope.peticion($scope.site_url+'/apu/remove_recurso/', {recurso: element, tipo: tipo_lista}, function(resp){
+						if(resp.data.status){
+							lista.splice( lista.indexOf(element), 1 );
+						}else{
+							alert('No se ha podido eliminar')
+						}
+					});
+				}
+			});
+			$scope.calcular_subtotales();
+		}
+	}
 	// Guardar analisis detallado
 	$scope.save_apu = function(lnk, vtag ){
 		$scope.loader = false;

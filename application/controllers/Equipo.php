@@ -88,7 +88,7 @@ class Equipo extends CI_Controller {
 	{
 		$q = $this->eq->getBy( array('codigo'=>$row[0], 'proyecto_idproyecto'=>$idproyecto) );
 		if($q->num_rows() <= 0){
-			if ( isset($row[1]) ) {
+			if ( isset($row[1]) && $row[1] != '') {
 				$equipo = new stdClass();
 				$equipo->codigo = $row[0];
 				$equipo->descripcion_equipo = $row[1];

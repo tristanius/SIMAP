@@ -33,7 +33,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="p in personal track by $index" ng-class="(!p.costo_unidad || p.costo_unidad == 0)?'bg-light-red':''">						
+					<tr ng-repeat="p in personal | filter: FilterProyectPer track by $index" ng-class="(!p.costo_unidad || p.costo_unidad == 0)?'bg-light-red':''">						
 						<td> <input type="checkbox" ng-model="p.seleccion" /> </td>
 						<td ng-bind="p.codigo"></td>
 						<td ng-bind="p.cargo"></td>

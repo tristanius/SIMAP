@@ -88,7 +88,7 @@ class Material extends CI_Controller {
 	{
 		$q = $this->mat->getBy( array('codigo'=>$row[0], 'proyecto_idproyecto'=>$idproyecto) );
 		if($q->num_rows() <= 0){
-			if ( isset($row[1]) ) {
+			if ( isset($row[1]) && $row[1] != '' ) {
 				$material = new stdClass();
 				$material->codigo = $row[0];
 				$material->descripcion_material = $row[1];

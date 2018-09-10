@@ -24,7 +24,7 @@
 				<tr>
 					<th></th>
 					<th> <input type="text" class="thin-input" ng-model="filterPerAPU.codigo" style="width: 8ex;"> </th>
-					<th> <input type="text" class="thin-input" ng-model="filterPerAPU.cargo" style="width: 8ex;"> </th>
+					<th> <input type="text" class="thin-input" ng-model="filterPerAPU.cargo"> </th>
 					<th> <input type="text" class="thin-input" ng-model="filterPerAPU.unidad" style="width: 8ex;"> </th>
 					<th></th>
 					<th></th>
@@ -38,7 +38,10 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="p in myapu.personal | filter: filterPerAPU track by $index">
-					<td ng-bind="$index+1"></td>
+					<td> 
+						<button type="button" class="hollow  button alert tiny" ng-click="removeRecursoFrom('personal', p, myapu.personal)"> x </button> 
+						<span ng-bind="$index+1"></span>
+					</td>
 					<td ng-bind="p.codigo"></td>
 					<td ng-bind="p.cargo"></td>
 					<td ng-bind="p.unidad"></td>

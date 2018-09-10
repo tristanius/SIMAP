@@ -169,6 +169,37 @@ class Apu extends CI_Controller {
 		echo json_encode($ret);
 	}
 
+	public function remove_recurso()
+	{
+		$post = json_decode( file_get_contents('php://input') );
+		$this->load->model('apu_db');
+		$ret = new stdClass();
+		try {			
+			$this->apu_db->start();
+			switch ($post->tipo) {
+				case 'personal':
+					$this->apu_db->delPersonal($post->recurso->idapu_has_personal);
+					break;
+
+				case 'materiales':
+					$this->apu_db->delMaterial($post->recurso->idapu_has_material);
+					break;
+
+				case 'equipos':
+					$this->apu_db->delEquipo($post->recurso->idapu_has_equipo);
+					break;
+				
+				default:
+					$ret->status = FALSE;
+					break;
+			}
+			$ret->status = ($this->apu_db->end() === FALSE)?FALSE:TRUE;
+		} catch (Exception $e) {
+			$ret->status = FALSE;
+		}
+		echo json_encode($ret);
+	}
+
 	# =====================================================================================
 
 	# Importar APUs

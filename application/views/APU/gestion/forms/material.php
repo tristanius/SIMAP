@@ -24,7 +24,7 @@
 				<tr>
 					<th></th>
 					<th> <input type="text" class="thin-input" ng-model="filterMatAPU.codigo" style="width: 8ex;" > </th>
-					<th> <input type="text" class="thin-input" ng-model="filterMatAPU.descripcion_material" style="width: 8ex;" > </th>
+					<th> <input type="text" class="thin-input" ng-model="filterMatAPU.descripcion_material" > </th>
 					<th> <input type="text" class="thin-input" ng-model="filterMatAPU.unidad" style="width: 8ex;" > </th>
 					<th></th>
 					<th></th>
@@ -38,7 +38,10 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="m in myapu.materiales | filter: filterMatAPU track by $index">
-					<td ng-bind="$index+1"></td>
+					<td> 
+						<button type="button" class="hollow  button alert tiny" ng-click="removeRecursoFrom('materiales', m, myapu.materiales)"> x </button> 
+						<span ng-bind="$index+1"></span>
+					</td>
 					<td ng-bind="m.codigo"></td>
 					<td ng-bind="m.descripcion_material"></td>
 					<td ng-bind="m.unidad"></td>					

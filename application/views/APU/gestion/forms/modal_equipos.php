@@ -30,7 +30,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="e in equipos track by $index"  ng-class="(!e.costo_unidad || e.costo_unidad == 0)?'bg-light-red':''">						
+					<tr ng-repeat="e in equipos | filter: FilterProyectEq track by $index"  ng-class="(!e.costo_unidad || e.costo_unidad == 0)?'bg-light-red':''">						
 						<td> <input type="checkbox" ng-model="e.seleccion" ng-init="e.seleccion = false;"> </td>
 						<td ng-bind="e.codigo"></td>
 						<td ng-bind="e.descripcion_equipo"></td>
