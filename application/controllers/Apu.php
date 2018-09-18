@@ -147,7 +147,7 @@ class Apu extends CI_Controller {
 	}	
 
 	# consulta de elementos de un Item APU
-	public function get($id)	{
+	public function get($id, $retornar=FALSE){
 		$this->load->model('apu_db','apu');
 		$ret = new stdClass();
 		$rows = $this->apu->getBy(array('idapu'=>$id));
@@ -165,6 +165,9 @@ class Apu extends CI_Controller {
 			$ret->status = TRUE;
 		}else{
 			$ret->status = FALSE;
+		}
+		if($retornar){
+			return $ret->apu;
 		}
 		echo json_encode($ret);
 	}
@@ -431,6 +434,42 @@ class Apu extends CI_Controller {
 
 			$this->apu->mod( $item );
 		}
+	}
+	# =====================================================================================
+
+	# Export APUs
+	public function export_project( $idproyecto, $format='EXCEL' )
+	{
+		$this->load->model('apu_db');
+		$data = array('apu.proyecto_idproyecto'=>$idproyecto);
+		$listado = $this->apu->getBy($data)->result();
+	}
+
+	public function export( $idapu, $format='EXCEL' )
+	{
+		#$this->load->model('apu_db');
+		$apu = $this->get($idapu);
+		switch ($format) {
+			case 'EXCEL':
+				$this->export_excel($apu);
+				break;
+			case 'PDF':
+				$this->export_pdf($apu);
+				break;			
+			default:
+				$this->export_pdf($apu);
+				break;
+		}
+	}
+
+	private function export_pdf( $idapu=NULL )
+	{
+
+	}
+
+	private function export_excel( $apu=NULL )
+	{
+		
 	}
 
 	# =======================================================================

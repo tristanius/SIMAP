@@ -242,6 +242,7 @@ app.controller("gestion_apu",function($scope, $http, $timeout){
 			}
 			v.seleccion = false;
 		});
+		$scope.calcular_subtotales();
 		$scope.vmodal(tag, 'close');
 	}
 
@@ -300,7 +301,7 @@ app.controller("gestion_apu",function($scope, $http, $timeout){
 	// Caculo de subtotal por item
 	$scope.calc_subtotal = function(item, calculo){
 		var t = item.costo_unidad / (item.cantidad * item.rendimiento);	
-		item.subtotal = parseFloat(t).toFixed(2);
+		item.subtotal = parseFloat(t).toFixed(4);
 	}
 	
 	$scope.calcular_subtotales = function(){

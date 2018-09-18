@@ -22,6 +22,8 @@ class Welcome extends CI_Controller {
 	{
 		if ( $this->sesion_iniciada() ) {
 			$this->load->view("inicio/principal");
+		}else{
+			redirect( app_termo() ,'refresh');
 		}
 	}
 
